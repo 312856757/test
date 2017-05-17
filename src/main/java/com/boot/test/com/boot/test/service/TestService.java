@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class TestService {
     public void test() throws InterruptedException {
-        //synchronized(this){
+        synchronized(this){
             for(int i=0;i<10;i++) {
                 Thread.sleep(1000);
                 System.out.println(i);
             }
-       // }
+        }
         System.out.println("not sync");
     }
 }
